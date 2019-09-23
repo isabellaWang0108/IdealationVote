@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/IdealationVote/static/css/main.bbfcb933.chunk.css",
+    "main.js": "/IdealationVote/static/js/main.1f6ac881.chunk.js",
+    "main.js.map": "/IdealationVote/static/js/main.1f6ac881.chunk.js.map",
+    "runtime-main.js": "/IdealationVote/static/js/runtime-main.4163226c.js",
+    "runtime-main.js.map": "/IdealationVote/static/js/runtime-main.4163226c.js.map",
+    "static/js/2.d6a86d2b.chunk.js": "/IdealationVote/static/js/2.d6a86d2b.chunk.js",
+    "static/js/2.d6a86d2b.chunk.js.map": "/IdealationVote/static/js/2.d6a86d2b.chunk.js.map",
+    "index.html": "/IdealationVote/index.html",
+    "precache-manifest.e042b63edba8bbe60d21644b9b3c6db1.js": "/IdealationVote/precache-manifest.e042b63edba8bbe60d21644b9b3c6db1.js",
+    "service-worker.js": "/IdealationVote/service-worker.js",
+    "static/css/main.bbfcb933.chunk.css.map": "/IdealationVote/static/css/main.bbfcb933.chunk.css.map",
+    "static/media/index.css": "/IdealationVote/static/media/bg.1b5dad28.png",
+    "static/media/like.png": "/IdealationVote/static/media/like.12482c37.png",
+    "static/media/mindmap.png": "/IdealationVote/static/media/mindmap.c8bd73a0.png"
+  }
+}
