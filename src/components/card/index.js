@@ -2,30 +2,38 @@ import React from "react"
 import "../../index.css"
 import Like from "../graphs/like.png"
 // import { Link } from "react-router-dom";
-// import $ from 'jquery';
+import $ from 'jquery';
 import fire from "../firebase"
+// import Liked from "../graphs/liked.png"
 
 class Card extends React.Component {
     state = {
-        cardFaceUp: true,
-        clickCounter: 0
+        cardFaceUp: true
     }
 
     componentWillMount(){
-        /* Create reference to messages in Firebase Database */
-        let messagesRef = fire.database().ref('messages').orderByKey().limitToLast(100);
-        messagesRef.on('child_added', snapshot => {
-          /* Update React state when message is added at Firebase Database */
-          let message = { text: snapshot.val(), id: snapshot.key };
-          this.setState({ messages: [message].concat(this.state.messages) });
-        })
+        fire.database().ref().on("value", function(snapshot) {
+            $(".click_value").text(snapshot.val().click_value);
+            $(".click_value2").text(snapshot.val().click_value2);
+            $(".click_value3").text(snapshot.val().click_value3);
+            $(".click_value4").text(snapshot.val().click_value4);
+            $(".click_value5").text(snapshot.val().click_value5)
+            
+
+        }, function(errorObject) {
+
+            console.log("The read failed: " + errorObject.code);
+          });
       }
+      
+
       addMessage(e){
-        e.preventDefault(); // <- prevent form submit from reloading the page
-        /* Send the message to Firebase */
-        fire.database().ref('messages').push( this.inputEl.value );
-        this.inputEl.value = ''; // <- clear the input
+        e.preventDefault(); 
+        fire.database().ref(e.target.id).set(parseInt($("."+e.target.id).text())+1);
+        $("#"+e.target.id).css("opacity","0");
+        $("#"+e.target.id).css("cursor","default");
       }
+      
 
     changeContent = () => {
         this.setState({
@@ -53,7 +61,7 @@ class Card extends React.Component {
                         <h1>{this.props.audiences}</h1>
                         <br /><br />
                     </div>
-                    <img onClick={this.count} className="like" alt="2" src={Like}></img><span id={this.props.id}>1</span>
+                    <img id={this.props.id} onClick={this.addMessage} className="like" alt="2" src={Like}></img><span className={this.props.id}>{this.state.click_value1}</span>
                     <br />
                 </div> :
                 <div className="card">
