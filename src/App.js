@@ -4,6 +4,7 @@ import "./index.css"
 import Card from "./components/card"
 import Title from "./components/graphs/title.png"
 // import firebase from 'react-native-firebase';
+import Mindmap from "./components/graphs/mindmap.png"
 
 
 
@@ -17,8 +18,9 @@ class App extends Component {
     return (
 
       <div className="container">
-        <img style={space} src={Title} alt="1" />
+        <img style={space} className="title" src={Title} alt="1" />
         <h2>What will we become, now that life means living with computers?</h2>
+        <a href={Mindmap} download>Download Isabella's Mindmap</a>
         <div className="top-Spacing"></div>
         <Card content="What if AI replaces most of the works we are doing now? Where is our future?"
           medium="Software"
